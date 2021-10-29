@@ -1,0 +1,1 @@
+This is a program which was made to understand FormData and how to work with it as well as how to use it together with GET and POST methods.

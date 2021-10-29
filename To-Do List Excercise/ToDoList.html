@@ -1,0 +1,137 @@
+<!-- Del op i kategorier - Eventuelt arbejde, hjemme, fritid etc.-->
+<!-- Make another list and have the add item add it to the list of uncategorized items
+     Make it so it is possible to drag and drop the items into the categories so that it is more dynamic-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+
+        <style>
+            .div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .li {
+                border: 1px solid black;
+            }
+            .deleteButton {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                margin-right: 5px;
+            }
+            .inputText {
+                margin-left: 40px;
+            }
+            .span {
+                margin-left: 5px;
+                cursor: pointer;
+            }
+        </style>
+
+
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', e => {
+                let listItems = [];
+                let storageListItems = [];
+
+                function addItem(e) {
+                    e.preventDefault();
+                    var value = document.getElementsByName("itemName")[0].value;
+
+                    item = new Item(value, "none");
+
+                    addItemToUI(item);
+
+                    listItems.push(item);
+                };
+
+                function addItemToUI(item){
+                    var ul = document.getElementsByTagName("ul")[0];
+                    var div = document.createElement("div");
+                    var span  = document.createElement("span");
+                    var inputButton = document.createElement("button");
+                    inputButton.innerText = "Delete";
+                    var li = document.createElement("li");
+
+                    li.setAttribute("class", "li");
+                    inputButton.setAttribute("class", "deleteButton");
+                    span.appendChild(document.createTextNode(item.description));
+                    div.setAttribute("class", "div");
+                    span.setAttribute("class", "span");
+                    span.style.textDecoration = item.state;
+
+                    div.appendChild(span);
+                    div.appendChild(inputButton);
+
+                    li.appendChild(div);
+
+                    ul.appendChild(li);
+
+                    inputButton.addEventListener("click", removeItem);
+                    span.addEventListener("click", markItemDone);
+                }
+
+                const removeItem = e => {
+                    e.preventDefault();
+                    var ul = document.getElementsByTagName("ul")[0];
+
+                    var li = e.target.parentNode.parentNode;
+                    ul.removeChild(li);
+
+
+                    console.log(e.target.parentNode.children[0].innerText);
+                    listItems.splice(listItems.indexOf(listItems.find(x => x.description == e.target.parentNode.children[0].innerText)), 1);
+                    
+                    //const removeItem = new Item(li.getElementsByTagName("span")[0].innerText);
+                };
+
+                var markItemDone = e => {
+
+                    if(e.target.style.textDecoration == "line-through"){
+                        e.target.style.textDecoration = "none";
+                        item = listItems.find(x => x.description == e.target.innerText);
+                        item.state = "none";
+                    }
+                    else{
+                        e.target.style.textDecoration = "line-through";
+                        item = listItems.find(x => x.description == e.target.innerText);
+                        item.state = "line-through";
+                    }
+                };
+
+                class Item {
+                    constructor(description, state){
+                        this.description = description;
+                        this.state = state;
+                    }
+                }
+
+                window.onbeforeunload = (e) => {
+                    localStorage.setItem("listItems", JSON.stringify(listItems));
+                }
+
+                window.onload = (e) => {
+                    if(localStorage.getItem("listItems") !== null){
+                        listItems = JSON.parse(localStorage.getItem("listItems"));
+
+                        listItems.forEach(item => {
+                            addItemToUI(item);
+                        });
+                    }
+                }
+                
+                document.forms.itemForm.addEventListener("submit", addItem);
+			});
+		</script>
+	</head>
+	<body>
+        <form name="itemForm">
+            <input type="text" class="inputText" name="itemName" />
+            <button>Add Item</button>
+            <ul id="ul"></ul>
+        </form>
+	</body>
+</html>

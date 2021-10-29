@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>HTML Forms and FormData combined with HTML GET AND POST using fetch()</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="htmlFormsCSS.css">
+        <link rel="script" href="htmlFormsJS.js">
+
+    </head>
+
+    <body>
+        <form name="formLabel">
+            <fieldset>
+                <legend>Write an entry for the day you worked out and see the collection of your entries below the form</legend>
+
+                <div class="dropdownDiv">
+                    <label for="WeekdayOrWeekend">Select weekday or weekend:</label>
+
+                    <select name="WeekdayOrWeekend" required="enabled">
+                        <option value=""></option>
+                        <option value="Weekday">Weekday</option>
+                        <option value="Weekend">Weekend</option>
+                    </select>
+                </div>
+
+                <textarea name="entryData" required="enabled"></textarea>
+            
+                <div class="weekdayDiv">
+                    <label><input type="checkbox" name="weekday" value="Monday"> Monday</label>
+                    <label><input type="checkbox" name="weekday" value="Tuesday"> Tuesday</label>
+                    <label><input type="checkbox" name="weekday" value="Wednesday"> Wednesday</label>
+                    <label><input type="checkbox" name="weekday" value="Thursday"> Thursday</label>
+                    <label><input type="checkbox" name="weekday" value="Friday"> Friday</label>
+
+                </div>
+
+                <div class="weekendDiv">
+                    <label><input type="checkbox" name="weekend" value="Saturday"> Saturday</label>
+                    <label><input type="checkbox" name="weekend" value="Sunday"> Sunday</label>
+                </div>
+
+                <input class="submit" type="submit" value="Submit">
+            </fieldset>
+        </form>
+    </body>
+</html>

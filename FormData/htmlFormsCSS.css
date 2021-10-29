@@ -1,0 +1,30 @@
+textarea
+{
+    display:inline-block;
+    min-height: 150px;
+    min-width: 300px;
+    height: 300px;
+    margin: 5px;
+}
+
+.dropdownDiv *
+{
+    display: inline-block;
+    margin: 5px;
+}
+
+.weekdayDiv
+{
+    visibility: collapse;
+    margin: 5px;
+}
+.weekendDiv
+{
+    visibility: collapse;
+    margin: 5px;
+}
+
+.submit
+{
+    margin: 5px;
+}
