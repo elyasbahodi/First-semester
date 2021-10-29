@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+  <script type="text/javascript">
+    var users;
+    var users_arr = [];
+    var content;
+
+    let firstnameSpan = document.createElement('h1');
+    let surnameSpan = document.createElement('h1');
+    let ageSpan = document.createElement('h1');
+    let countrySpan = document.createElement('h1');
+    let educationSpan = document.createElement('h1');
+
+    class user {
+      constructor(firstName, surname, age, country, education){
+        this.firstName = firstName;
+        this.surname = surname;
+        this.age = age;
+        this.country = country;
+        this.education = education;
+      }
+    }
+
+    const updatelist = userarr => {
+      let str = '';
+      userarr.forEach(user => {
+        str += `<li><a href="${user.id}">${user.name}</a></li>`;
+      });
+      users.innerHTML = str;
+    };
+
+    const onusersclicked = e => {
+      e.preventDefault();
+      if(e.target.nodeName == 'A'){
+        let id = e.target.innerHTML;
+        console.log(id);
+        let userInfo = `userFolder/${id}.json`;
+    		fetch(userInfo)
+    		  .then(response => response.json())
+    		  .then(json => {
+            firstnameSpan.style.display = "block";
+            surnameSpan.style.display = "block";
+            ageSpan.style.display = "block";
+            countrySpan.style.display = "block";
+            educationSpan.style.display = "block";
+
+            firstnameSpan.innerHTML = "Firstname: " + json.firstname;
+            surnameSpan.innerHTML = "Surname: " + json.surname;
+            ageSpan.innerHTML = "Age: " + json.age;
+            countrySpan.innerHTML = "Country: " + json.country;
+            educationSpan.innerHTML = "Education: " + json.education;
+
+            content.appendChild(firstnameSpan);
+            content.appendChild(surnameSpan);
+            content.appendChild(ageSpan);
+            content.appendChild(countrySpan);
+            content.appendChild(educationSpan);
+
+            return content;
+          });
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', e => {
+      users = document.getElementById('users');
+      content = document.getElementById('content');
+
+      users.addEventListener('click', onusersclicked);
+
+      fetch('users.json')
+        .then(response => response.json())
+        .then(json => {
+          users_arr = json;
+          updatelist(json);
+        });
+    });
+  </script>
+</head>
+<body>
+<ul id="users"></ul>
+
+<div id="content"></div>
+</body>
+</html>
