@@ -9,11 +9,11 @@
     var users_arr = [];
     var content;
 
-    let firstnameSpan = document.createElement('h1');
-    let surnameSpan = document.createElement('h1');
-    let ageSpan = document.createElement('h1');
-    let countrySpan = document.createElement('h1');
-    let educationSpan = document.createElement('h1');
+    let firstnameSpan = document.createElement('span');
+    let surnameSpan = document.createElement('span');
+    let ageSpan = document.createElement('span');
+    let countrySpan = document.createElement('span');
+    let educationSpan = document.createElement('span');
 
     class user {
       constructor(firstName, surname, age, country, education){
@@ -47,6 +47,12 @@
             ageSpan.style.display = "block";
             countrySpan.style.display = "block";
             educationSpan.style.display = "block";
+            
+            firstnameSpan.style.margin = "5px";
+            surnameSpan.style.margin = "5px";
+            ageSpan.style.margin = "5px";
+            countrySpan.style.margin = "5px";
+            educationSpan.style.margin = "5px";
 
             firstnameSpan.innerHTML = "Firstname: " + json.firstname;
             surnameSpan.innerHTML = "Surname: " + json.surname;
