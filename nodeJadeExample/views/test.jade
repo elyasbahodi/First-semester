@@ -1,0 +1,12 @@
+doctype html
+html
+head
+title=title
+body
+    h1 book List using Jade engine
+
+    ul
+        each item in bookList
+            li=item.Title 
+            
+        p The author is #{author}
