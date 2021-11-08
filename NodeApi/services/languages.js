@@ -37,8 +37,50 @@ async function create(language){
     return {message};
 }
 
+async function update(id, language) {
+    const result = await db.query(
+        `update language set 
+        NameDanish=?,
+        NameEnglish=?,
+        DisplayOrder=?,
+        Active=?
+        where LanguageId=?`,
+        [
+            language.NameDanish,
+            language.NameEnglish,
+            language.DisplayOrder,
+            language.Active,
+            id
+        ]
+    );
+
+    let message = 'Error in updating language';
+
+    if(result.affectedRows){
+        message = 'Language updated succesfully'
+    }
+
+    return {message};
+}
+
+async function remove(id) {
+    const result = await db.query(
+        `delete from language where LanguageId=?`, [id]
+    );
+    
+    let message = 'Error in deleting language';
+
+    if(result.affectedRows)
+        message = 'Language deleted succesfully';
+
+    return {message};
+}
+
+
 module.exports = {
     getMultiple,
-    create
+    create,
+    update,
+    remove
 }
 
