@@ -6,6 +6,8 @@ const languagesRouter = require('./routes/languages');
 const productCategoryRouter = require('./routes/productCategories');
 const productRouter = require('./routes/products');
 const customerRouter = require('./routes/customers');
+const invoiceLineRouter = require('./routes/invoiceLines');
+const invoiceRouter = require('./routes/invoices');
 
 app.use(bodyParser.json());
 
@@ -21,6 +23,8 @@ app.use('/languages', languagesRouter);
 app.use('/productCategories', productCategoryRouter);
 app.use('/products', productRouter);
 app.use('/customers', customerRouter);
+app.use('/invoiceLines', invoiceLineRouter);
+app.use('/invoices', invoiceRouter);
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
