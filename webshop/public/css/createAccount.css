@@ -1,0 +1,101 @@
+:root {
+    --cyan: #00BCD4;
+    --purple: #AB47BC;
+    --black: #212121;
+    --grey: #616161;
+    --white: #ffffff;
+    --roboto: 'Roboto', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(45deg, var(--cyan), var(--purple));
+    background: linear-gradient(45deg, var(--cyan), var(--purple));
+    background-color: var(--cyan);
+}
+
+.divFlex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+
+}
+
+.h2Centered {
+    align-self: center;
+}
+
+.inputTypeAligned {
+    align-self: center;
+}
+
+.paragraph {
+    margin: 5px;
+    display: inline-block;
+}
+
+.input {
+    margin: 5px;
+    display: inline-block;
+}
+
+.createAccount {
+    align-self: center;
+    margin: 20px;
+}
+
+.password {
+    margin-right: 2px;
+}
+
+.email {
+    margin-left: 25px;
+}
+
+.companyName {
+    margin-right: 38px;
+}
+
+.cvr {
+    margin-left: 30px;
+}
+
+.name {
+    margin-left: 25px;
+}
+
+.address {
+    margin-left: 10px;
+}
+
+.zipcode {
+    margin-left: 10px;
+}
+
+.city {
+    margin-left: 35px;
+}
+
+.country {
+    margin-left: 15px;
+}
+.selection {
+    width: 180px;
+}
+
+.phonegraph {
+    display: inline-block;
+}
+
+.companyType {
+    margin-left: -27px;
+}
+
+
+.phone {
+    margin-left: 22px;
+    display: inline-block;
+}

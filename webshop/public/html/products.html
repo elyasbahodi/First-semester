@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/products.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <script src="/javascript/products.js"></script>
+    </head>
+
+    <body onload="load()">
+        <header class="fixed-top">
+            <div class="flexBox">
+                <h1 class="title">SecondHand goods</h1>
+                <button type="button" class="icon-button">
+                    <span class="material-icons">notifications</span>
+                    <span class="icon-button__badge">2</span>
+                </button>
+                <form class="form" action="/html/login.html" method="get">
+                    <input type="submit" class="login" value="Login"/>
+                </form>              
+            </div>
+
+        </header>
+
+        <table class="productTable" id="table">
+            <thead>
+                <tr>
+                    <th class="headers">Name</th>
+                    <th class="headers">Price</th>
+                    <th class="headers">Comment</th>
+                    <th class="headers">Category name</th>
+                    <th class="headers"></th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+
+        <div>
+            <span id="products"></span>
+        </div>
+    </body>
+</html>

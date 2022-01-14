@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/createAccount.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--<script src="/javascript/updateCustomerProfile.js"></script>-->
+    </head>
+
+    <body>
+        <header class="fixed-top">
+            <div class="flexBox">
+                <h1 class="title">SecondHand goods</h1>
+                <button type="button" class="icon-button">
+                    <span class="material-icons">notifications</span>
+                    <span class="icon-button__badge">2</span>
+                </button>
+                <form class="form" action="/html/login.html" method="get">
+                    <input type="submit" class="login" value="Login"/>
+                </form>              
+            </div>
+
+            <h2 class="h2Centered">Please fill out the information below that you want to update</h1>
+                <div class="divFlex">
+                    <div class="inputTypeAligned companyType">
+                        <p class="paragraph">Company type:</p>
+                        <select name="CompanyTypeId" class="input selection"></select>
+                    </div>
+                    <div class="inputTypeAligned companyName">
+                        <p class="paragraph">Company name:</p>
+                        <input name="CompanyName" class="input" type="text" />
+                    </div>
+                    <div class="inputTypeAligned cvr">
+                        <p class="paragraph">CVR:</p>
+                        <input name="cvr" class="input" type="number" />
+                    </div>
+                    <div class="inputTypeAligned name">
+                        <p class="paragraph">Name:</p>
+                        <input name="Name" class="input" type="text" />
+                    </div>
+                    <div class="inputTypeAligned address">
+                        <p class="paragraph">Address:</p>
+                        <input name="Address" class="input" type="text" />
+                    </div>
+                    <div class="inputTypeAligned zipcode">
+                        <p class="paragraph">Zipcode:</p>
+                        <input name="ZipCode" class="input" type="number" />
+                    </div>
+                    <div class="inputTypeAligned city">
+                        <p class="paragraph">City:</p>
+                        <input name="City" class="input" type="text" />
+                    </div>
+                    <div class="inputTypeAligned country">
+                        <p class="paragraph">Country:</p>
+                        <select name="CountryId" class="input selection"></select>
+                    </div>
+                    <div class="inputTypeAligned phone">
+                        <p class="paragraph">Phone:</p>
+                        <input name="Phone" class="input" type="number" />
+                    </div>
+                    <div class="inputTypeAligned email">
+                        <p class="paragraph">Email:</p>
+                        <input name="Email" class="input" type="email" />
+                    </div>
+                    <div class="inputTypeAligned comment">
+                        <p class="paragraph">Comment:</p>
+                        <input name="Comment" class="input" type="text" />
+                    </div>
+                    <input type="submit" class="createAccount" onclick="postData()" value="Create new account" />
+                </div>
+        </header>
+    </body>
+</html>

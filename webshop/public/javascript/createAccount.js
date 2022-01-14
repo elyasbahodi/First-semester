@@ -1,0 +1,3 @@
+function load() {
+    fetch('/addToSession');
+}

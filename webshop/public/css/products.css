@@ -1,0 +1,22 @@
+table {
+    box-sizing: border-box;
+    border: 2px solid;
+    border-collapse:collapse;
+    padding: 40px;
+    margin: 20px;
+
+}
+
+tr {
+    border:2px solid;
+}
+
+th, td {
+    padding: 10px;
+    border:2px solid rgb(255, 168, 127);
+    background-color: rgb(255, 168, 127);
+}
+.headers {
+    border: 2px solid cyan;
+    background-color:cyan;
+}

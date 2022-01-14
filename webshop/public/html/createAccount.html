@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/createAccount.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="/javascript/createAccount.js"></script>
+
+    </head>
+
+    <body onload="load()">
+        <header class="fixed-top">
+            <div class="flexBox">
+                <h1 class="title">SecondHand goods</h1>
+                <button type="button" class="icon-button">
+                    <span class="material-icons">notifications</span>
+                    <span class="icon-button__badge">2</span>
+                </button>
+                <form class="form" action="/html/login.html" method="get">
+                    <input type="submit" class="login" value="Login"/>
+                </form>              
+            </div>
+
+            <h2 class="h2Centered">Please fill out the information below to create a new account</h1>
+            <form action="/accounts" method="post">
+                <div class="divFlex">
+                    <div class="inputTypeAligned">
+                        <p class="paragraph">Username:</p>
+                        <input name="username" class="input" type="text" />
+                    </div>
+                    <div class="inputTypeAligned ">
+                        <p class="paragraph">Password:</p>
+                        <input name="password" class="input password" type="password" />
+                    </div>
+                    <div class="inputTypeAligned email">
+                        <p class="paragraph">Email:</p>
+                        <input name="email" class="input" type="email" />
+                    </div>
+                    
+                    <input type="submit" class="createAccount" value="Next" />
+                </div>
+
+            </form>
+        </header>
+    </body>
+</html>
