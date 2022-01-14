@@ -19,8 +19,8 @@ function userLogin() {
   .finally(() => {
     let isLogin = true;
 
-    console.log(account);
-    if(userName.value === account[0].username && userPassWord.value === account[0].password) {
+    console.log(account[0]);
+    if(account[0] != undefined && account[0] != null && userName.value === account[0].username && userPassWord.value === account[0].password) {
       loginCheck(isLogin)
     } else {
       loginCheck(!isLogin)
